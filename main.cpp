@@ -128,8 +128,19 @@ vector<vector<bool>>& parent_r,
 vector<vector<bool>>& parent_c,
 int exit_r, int exit_c,)
 {
-    // To_Do: Implement DFS
-    return false;
+    int N = maze.size();
+    int M = maze[0].size();
+
+    //Out-Of-Bounds Check
+    if (r < 0 || r >= N || c < 0 || c >= M) return false;
+
+    //Wall Check
+    if (maze[r][c] == 1) return false;
+
+    // Already Visited Check
+    if (visited[r][c]) return false;
+
+return false;
 }
 
 // ----------------------------------------------------------
