@@ -140,6 +140,14 @@ int exit_r, int exit_c,)
     // Already Visited Check
     if (visited[r][c]) return false;
 
+    //Mark Visited & Exit Check
+    visited[r][c] = true;
+
+    //Exit Check
+    if (r == exit_r && c == exit_c) {
+        return true;
+    }
+
 return false;
 }
 
