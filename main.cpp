@@ -148,6 +148,15 @@ int exit_r, int exit_c,)
         return true;
     }
 
+    //Exploring Neighbors using dr and dc
+    for (int d = 0; d < 4; d++) {
+    int nr = r + dr[d];
+    int nc = c + dc[d];
+
+    if (dfs(nr, nc, maze, visited, parent_r, parent_c, exit_r, exit_c)) {
+    return true;
+}
+
 return false;
 }
 
