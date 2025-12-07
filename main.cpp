@@ -150,25 +150,24 @@ int exit_r, int exit_c,)
 
     //Exploring Neighbors using dr and dc
     for (int d = 0; d < 4; d++) {
-    int nr = r + dr[d];
-    int nc = c + dc[d];
+        int nr = r + dr[d];
+        int nc = c + dc[d];
 
-    //Implementing Parent Tracking
-    if (nr >= 0 && nr < N && nc >= 0 && nc < M) {
-        if (!visited[nr][nc] && maze[nr][nc] == 0) {
-            parent_r[nr][nc] = r;
-            parent_c[nr][nc] = c;
+        //Implementing Parent Tracking
+        if (nr >= 0 && nr < N && nc >= 0 && nc < M) {
+            if (!visited[nr][nc] && maze[nr][nc] == 0) {
+                //Tracks the parent before recursion
+                parent_r[nr][nc] = r;
+                parent_c[nr][nc] = c;
 
 
-            if (dfs(nr, nc, maze, visited, parent_r, parent_c, exit_r, exit_c)) {
-                return true; //Found the exit
+                if (dfs(nr, nc, maze, visited, parent_r, parent_c, exit_r, exit_c)) {
+                    return true; //Found the exit
+                }
             }
         }
     }
-}
-
-
-return false;
+    return false; //No path from this branch
 }
 
 // ----------------------------------------------------------
